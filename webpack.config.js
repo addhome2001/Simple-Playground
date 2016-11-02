@@ -17,6 +17,9 @@ module.exports = {
 	output: {
     path: path.join(__dirname, './dist'),
 		filename: 'bundle.js',
+    /* If you want to expose 'ClassName' to global namespace => window.ClassName
+      library: 'ClassName',
+    */
 	},
   plugins:[new webpack.HotModuleReplacementPlugin()],
     resolveLoader: {
@@ -30,15 +33,15 @@ module.exports = {
     ]
   },
   module: {
-	  loaders: [
+    rules: [
       {
-        test: /\.js/,
-        exclude: /(node_modules)/,
-        loaders: 'babel',
-        query: {
-          cacheDirectory: true
-        }
-      }
+        test: /\.js$/,
+        use: [{
+          loader: "babel",
+          options: { presets: ["es2015"] },
+          query: { cacheDirectory: true }
+        }],
+      },
     ]
   },
   plugins: [

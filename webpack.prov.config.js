@@ -18,18 +18,19 @@ module.exports = {
       })
   ],
   resolve: {
-		extensions: ['', '.js', 'jsx']
+		extensions: ['', '.js', 'jsx'],
+    modules: [path.resolve(__dirname, "src"), "node_modules"]
 	},
 	module: {
-		loaders: [
+    rules: [
       {
-        test: /\.js[x]?$/,
-        exclude: /(node_modules)/,
-        loaders: 'babel',
-        query: {
-          cacheDirectory: true
-        }
-      }
+        test: /\.js$/,
+        use: [{
+          loader: "babel",
+          options: { presets: ["es2015"] },
+          query: { cacheDirectory: true }
+        }],
+      },
     ]
   }
 };
