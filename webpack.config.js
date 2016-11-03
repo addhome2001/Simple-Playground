@@ -38,7 +38,7 @@ module.exports = {
         test: /\.js$/,
         use: [{
           loader: "babel",
-          options: { presets: ["es2015"] },
+          options: { presets: ["latest"] },
           query: { cacheDirectory: true }
         }],
       },
