@@ -4,6 +4,6 @@
     "browser": true
   },
   "rules": {
-    'no-param-reassign': ['error', { "props": false }]
+    "no-console": ["error", { "allow": ["log"] } ]
   }
 }
