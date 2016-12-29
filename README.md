@@ -9,6 +9,8 @@ A simple playground with webpack2(`tree-shaking`) webpack-hot-reload babel6.
 - [Webpack 2](https://webpack.github.io)
 - [Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
 - [Babel 6](https://babeljs.io/)
+- [ESLint](http://eslint.org/)
+- [Yarn](https://yarnpkg.com/)
 
 ## Requirements
 Make sure your system has the correct Node and Npm versions.
