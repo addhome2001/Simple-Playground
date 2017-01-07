@@ -15,14 +15,25 @@ module.exports = {
      contentBase: './dist',
   },
 	output: {
-    path: path.join(__dirname, './dist'),
+    path: path.join(__dirname, '/dist'),
 		filename: 'bundle.js',
     /* If you want to expose 'ClassName' to global namespace => window.ClassName
       library: 'ClassName',
     */
 	},
-  plugins:[new webpack.HotModuleReplacementPlugin()],
-    resolveLoader: {
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin(
+      {
+        'process.env.NODE_ENV': JSON.stringify('development'),
+      }
+    ),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+  ],
+  resolveLoader: {
    	modulesDirectories: ['node_modules']
  	},
   resolve: {
@@ -43,11 +54,5 @@ module.exports = {
         }],
       },
     ]
-  },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    })
-  ],
+  }
 };
