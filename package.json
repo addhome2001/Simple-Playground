@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --devtool eval --progress",
     "build": "webpack -p --config ./webpack.prov.config.js",
-    "lint": "./node_modules/.bin/eslint src --ignore-path .gitignore"
+    "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore"
   },
   "engines": {
     "node": ">=6.2.2",
@@ -15,6 +15,10 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "webpack": "2.1.0-beta.4",
+    "webpack-dev-server": "2.0.0-beta"
+  },
   "devDependencies": {
     "babel": "6.5.2",
     "babel-cli": "6.11.4",
@@ -28,8 +32,6 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "6.5.0",
     "babel-register": "6.11.6",
-    "babel-runtime": "6.11.6",
-    "webpack": "2.1.0-beta.4",
-    "webpack-dev-server": "2.0.0-beta"
+    "babel-runtime": "6.11.6"
   }
 }
