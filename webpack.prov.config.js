@@ -6,30 +6,38 @@ module.exports = {
     bundle: './src/index.js',
   },
   output: {
-    path: path.join(__dirname, 'dest'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].js',
   },
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compress: {
         warnings: false,
       },
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+    }),
   ],
   resolve: {
-    extensions: ['', '.js', 'jsx'],
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    extensions: ['.js', 'jsx'],
+    modules: ['node_modules'],
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [{
-          loader: 'babel',
-          options: { presets: ['latest'] },
-          query: { cacheDirectory: true },
-        }],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
+          },
+        ],
       },
     ],
   },

@@ -4,18 +4,18 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     bundle: [
-      'webpack-dev-server/client?http://localhost:8000',
+      'webpack-dev-server/client?http://0.0.0.0:8000',
       'webpack/hot/dev-server',
       './src/index.js',
     ],
   },
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8000,
-    contentBase: './dest',
+    contentBase: './dist',
   },
   output: {
-    path: path.join(__dirname, '/dest'),
+    path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
     /* If you want to expose 'ClassName' to global namespace => window.ClassName
       library: 'ClassName',
@@ -23,35 +23,28 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin(
-      {
-        'process.env.NODE_ENV': JSON.stringify('development'),
-      },
-    ),
     new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
+      minimize: false,
+      debug: true,
     }),
   ],
-  resolveLoader: {
-    modulesDirectories: ['node_modules'],
-  },
   resolve: {
-    extensions: ['', '.js', 'jsx'],
-    modules: [
-      path.resolve('./src'),
-      'node_modules',
-    ],
+    extensions: ['.js', 'jsx'],
+    modules: ['node_modules'],
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [{
-          loader: 'babel',
-          options: { presets: ['latest'] },
-          query: { cacheDirectory: true },
-        }],
+        exclude: /(node_modules)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
+          },
+        ],
       },
     ],
   },
