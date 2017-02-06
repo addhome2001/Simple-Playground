@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --devtool eval --progress",
     "build": "cross-env NODE_ENV=production webpack -p --config ./webpack.prov.config.js",
-    "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore"
+    "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore",
+    "pre-commit": "npm run lint"
   },
   "engines": {
     "node": ">=6.2.2",
@@ -17,8 +18,8 @@
   "dependencies": {
     "babel-runtime": "6.11.6",
     "cross-env": "3.1.4",
-    "webpack": "2.2",
-    "webpack-dev-server": "2.2"
+    "webpack": "2.2.0",
+    "webpack-dev-server": "2.2.0"
   },
   "devDependencies": {
     "babel-core": "6.13.2",
