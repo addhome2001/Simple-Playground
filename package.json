@@ -6,7 +6,7 @@
   "author": "",
   "scripts": {
     "start": "webpack-dev-server --devtool eval --progress",
-    "build": "cross-env NODE_ENV=production webpack -p --config ./webpack.prov.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.prov.config.js",
     "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore",
     "pre-commit": "npm run lint"
   },

@@ -11,16 +11,25 @@ module.exports = {
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false,
-      },
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        unused: true,
+        dead_code: true,
+      },
+      output: {
+        comments: false,
+      },
+    }),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
   ],
   resolve: {
     extensions: ['.js', 'jsx'],
