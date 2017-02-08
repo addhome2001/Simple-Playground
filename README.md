@@ -1,7 +1,5 @@
 # Simple Playground
 
-A simple playground with webpack2(`tree-shaking`) webpack-hot-reload babel6.
-
 > A boilerplate let you practice or learn something.
 
 ## Contains
@@ -20,7 +18,7 @@ Make sure your system has the correct Node and Npm versions.
 
 ## Usage
 - Changing source file in `/src` and click save.
-- open `http:localhost:8000`.
+- open `http:localhost:8000` or `http:YOUR_IP:8000`.
 
 ## Install
 ```
