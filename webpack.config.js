@@ -4,7 +4,6 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     bundle: [
-      'webpack-dev-server/client?http://0.0.0.0:8000',
       'webpack/hot/dev-server',
       './src/index.js',
     ],
