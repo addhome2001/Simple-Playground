@@ -37,10 +37,10 @@ module.exports = {
       title: 'Example',
       filename: 'index.html',
       template: 'templates/index.ejs',
-      env,
+      production: env === 'production',
       minify: {
-        removeComments: true,
-        collapseWhitespace: true,
+        // removeComments: true,
+        // collapseWhitespace: true,
       },
     }),
   ],
