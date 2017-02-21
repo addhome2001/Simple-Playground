@@ -39,8 +39,8 @@ module.exports = {
       template: 'templates/index.ejs',
       production: env === 'production',
       minify: {
-        // removeComments: true,
-        // collapseWhitespace: true,
+        removeComments: true,
+        collapseWhitespace: true,
       },
     }),
   ],
