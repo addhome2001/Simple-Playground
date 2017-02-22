@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: '[name].js',
+    filename: '[chunkhash:8].bundle.js',
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
