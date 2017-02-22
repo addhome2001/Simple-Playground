@@ -27,6 +27,10 @@ module.exports = {
       minimize: false,
       debug: true,
     }),
+    new webpack.ProvidePlugin({
+      Promise: 'es6-promise',
+      fetch: 'isomorphic-fetch',
+    }),
     new HtmlWebpackPlugin({
       title: 'Example',
       filename: 'index.html',

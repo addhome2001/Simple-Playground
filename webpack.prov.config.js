@@ -21,6 +21,10 @@ module.exports = {
       minimize: true,
       debug: false,
     }),
+    new webpack.ProvidePlugin({
+      Promise: 'es6-promise',
+      fetch: 'isomorphic-fetch',
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,

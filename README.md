@@ -9,6 +9,7 @@
 - [Babel 6](https://babeljs.io/)
 - [ESLint](http://eslint.org/)
 - [Yarn](https://yarnpkg.com/)
+- [fetch](https://github.com/matthew-andrews/isomorphic-fetch)
 
 ## Requirements
 Make sure your system has the correct Node and Npm versions.
