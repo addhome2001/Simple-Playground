@@ -41,7 +41,6 @@ module.exports = {
       title: 'Example',
       filename: 'index.html',
       template: 'templates/index.ejs',
-      production: env === 'production',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
