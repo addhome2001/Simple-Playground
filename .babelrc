@@ -6,8 +6,17 @@
           "modules": false
         },
       }
-    ] ,
+    ],
     "stage-0",
+    "react"
   ],
-  "plugins": ["transform-runtime"]
+  "plugins": [
+    "transform-runtime",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "production": {
+      "presets": ["react-optimize"]
+    }
+  }
 }

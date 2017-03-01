@@ -6,7 +6,7 @@ const env = process.env.NODE_ENV;
 
 module.exports = {
   entry: {
-    bundle: './src/index.js',
+    bundle: './src/index',
   },
   output: {
     path: path.join(__dirname, '/dist'),
@@ -48,13 +48,13 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     modules: ['node_modules'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js[x]$/,
         exclude: /(node_modules)/,
         use: [
           {

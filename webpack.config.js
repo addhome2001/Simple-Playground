@@ -5,14 +5,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     bundle: [
-      'webpack/hot/dev-server',
-      './src/index.js',
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://0.0.0.0:8000',
+      'webpack/hot/only-dev-server',
+      path.resolve(__dirname, 'src'),
     ],
   },
   devServer: {
     host: '0.0.0.0',
     port: 8000,
     contentBase: './dist',
+    historyApiFallback: true,
+    hot: true,
   },
   output: {
     path: path.join(__dirname, '/dist'),
@@ -38,13 +42,13 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     modules: ['node_modules'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js[x]$/,
         exclude: /(node_modules)/,
         use: [
           {
