@@ -3,7 +3,4 @@
   "env": {
     "browser": true
   },
-  "rules": {
-    "no-console": ["error", { "allow": ["log"] } ]
-  }
 }
