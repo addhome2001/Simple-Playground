@@ -1,12 +1,13 @@
 # Simple Playground
 
-> A boilerplate let you practice or learn something.
+> A React boilerplate let you practice or learn something.
 
 ## Contains
 
 - [Webpack 2](https://webpack.github.io)
 - [Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
 - [Babel 6](https://babeljs.io/)
+- [React](https://facebook.github.io/react/)
 - [ESLint](http://eslint.org/)
 - [Yarn](https://yarnpkg.com/)
 - [fetch](https://github.com/matthew-andrews/isomorphic-fetch)
