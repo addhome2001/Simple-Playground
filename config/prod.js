@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = () =>
   ({
     entry: {
-      bundle: './src/index.js',
+      bundle: path.join(__dirname, '../src'),
+
     },
     output: {
       path: path.join(__dirname, '../dist'),
@@ -39,7 +40,7 @@ module.exports = () =>
       new HtmlWebpackPlugin({
         title: 'Example',
         filename: 'index.html',
-        template: 'templates/index.ejs',
+        template: path.join(__dirname, '../templates', 'index.ejs'),
         minify: {
           removeComments: true,
           collapseWhitespace: true,

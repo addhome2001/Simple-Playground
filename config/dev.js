@@ -8,14 +8,14 @@ module.exports = () =>
     entry: {
       bundle: [
         'webpack/hot/dev-server',
-        './src/index.js',
+        path.join(__dirname, '../src'),
       ],
     },
     devtool: 'eval',
     devServer: {
       host: '0.0.0.0',
       port: 8000,
-      contentBase: './dist',
+      contentBase: path.join(__dirname, '../dist'),
     },
     output: {
       path: path.join(__dirname, '../dist'),
@@ -38,7 +38,7 @@ module.exports = () =>
       new HtmlWebpackPlugin({
         title: 'Example',
         filename: 'index.html',
-        template: 'templates/index.ejs',
+        template: path.join(__dirname, '../templates', 'index.ejs'),
       }),
     ],
     resolve: {
