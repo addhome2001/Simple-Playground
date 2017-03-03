@@ -5,8 +5,9 @@
   "main": "index.js",
   "author": "",
   "scripts": {
-    "start": "webpack-dev-server --devtool eval --progress",
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack.prov.config.js",
+    "start": "webpack-dev-server --env=dev --profile --colors --progress",
+    "build": "npm run clear && webpack --env=prod --progress --profile --colors",
+    "clear": "rm -rf ./dist",
     "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore",
     "prepush": "npm run lint"
   },
