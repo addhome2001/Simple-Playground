@@ -17,5 +17,5 @@ const render = (Root) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('./app', () => render(require('./app').default));
+  module.hot.accept('./app', () => render(App));
 }
