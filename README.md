@@ -1,5 +1,7 @@
 # Simple Playground
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/addhome2001/simple-playground.svg)](https://greenkeeper.io/)
+
 > A boilerplate let you practice or learn something.
 
 ## Contains
