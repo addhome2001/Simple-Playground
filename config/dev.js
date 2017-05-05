@@ -46,7 +46,8 @@ module.exports = () =>
     ],
     resolve: {
       extensions: ['.js', '.jsx'],
-      modules: ['node_modules'],
+      // 增加src可讓路徑根目錄為src
+      modules: ['node_modules', 'src'],
     },
     module: {
       rules: [
