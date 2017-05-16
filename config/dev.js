@@ -43,6 +43,9 @@ module.exports = () =>
     ],
     resolve: {
       extensions: ['.js'],
+      // 可以直接引入assets下的資源，但是需要加上assets前綴
+      // assets: path.resolve(__dirname, './src/assets'),
+      // 增加src可讓路徑根目錄為src
       modules: ['node_modules', 'src'],
     },
     module: {
