@@ -43,6 +43,9 @@ module.exports = () =>
         filename: 'index.html',
         template: path.join(__dirname, '../templates', '/index.ejs'),
       }),
+      new webpack.DefinePlugin({
+        'process.env.PERF': '1',
+      }),
     ],
     resolve: {
       extensions: ['.js', '.jsx'],

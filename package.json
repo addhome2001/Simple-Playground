@@ -24,6 +24,7 @@
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
+    "react-addons-perf": "^15.4.2",
     "react-dom": "^15.5.4",
     "react-hot-loader": "next",
     "webpack": "^2.3.3",

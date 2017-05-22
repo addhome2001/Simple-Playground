@@ -5,6 +5,11 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from 'app';
 
+if (process.env.PERF) {
+  const Perf = require('react-addons-perf');
+  window.Perf = Perf;
+}
+
 const render = (Root) => {
   ReactDOM.render(
     <AppContainer>
