@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const NODE_ENV = process.env.NODE_ENV || 'production';
+
 module.exports = () =>
   ({
     entry: {
@@ -15,7 +17,8 @@ module.exports = () =>
     plugins: [
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production'),
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+        __DEV__: false,
       }),
       new webpack.LoaderOptionsPlugin({
         minimize: true,

@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
+const HOST = process.env.HOST || 'localhost';
+const PORT = +process.env.PORT || 8000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = () =>
   ({
     entry: {
@@ -13,9 +17,10 @@ module.exports = () =>
     },
     devtool: 'eval',
     devServer: {
-      host: '0.0.0.0',
-      port: 8000,
+      host: HOST,
+      port: PORT,
       contentBase: path.join(__dirname, '../dist'),
+      historyApiFallback: true,
     },
     output: {
       path: path.join(__dirname, '../dist'),
@@ -39,6 +44,10 @@ module.exports = () =>
         title: 'Example',
         filename: 'index.html',
         template: path.join(__dirname, '../templates', 'index.ejs'),
+      }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+        __DEV__: true,
       }),
     ],
     resolve: {
