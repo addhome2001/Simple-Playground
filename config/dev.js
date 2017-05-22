@@ -3,19 +3,21 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
+const { HOST, PORT, NODE_ENV } = process.env;
+
 module.exports = () =>
   ({
     entry: {
       bundle: [
         'react-hot-loader/patch',
-        'webpack-dev-server/client?http://0.0.0.0:8000',
+        `webpack-dev-server/client?http://${HOST}:${PORT}`,
         'webpack/hot/only-dev-server',
         path.join(__dirname, '../src'),
       ],
     },
     devServer: {
-      host: '0.0.0.0',
-      port: 8000,
+      host: HOST,
+      port: PORT,
       contentBase: path.join(__dirname, '../dist'),
       historyApiFallback: true,
       hot: true,
@@ -44,7 +46,8 @@ module.exports = () =>
         template: path.join(__dirname, '../templates', '/index.ejs'),
       }),
       new webpack.DefinePlugin({
-        'process.env.PERF': '1',
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+        __DEV__: true,
       }),
     ],
     resolve: {

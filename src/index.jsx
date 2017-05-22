@@ -1,11 +1,12 @@
 /* eslint-disable global-require */
+/* eslint-disable no-undef */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from 'app';
 
-if (process.env.PERF) {
+if (__DEV__) {
   const Perf = require('react-addons-perf');
   window.Perf = Perf;
 }
