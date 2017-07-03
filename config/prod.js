@@ -49,6 +49,7 @@ module.exports = () =>
           collapseWhitespace: true,
         },
       }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
     ],
     resolve: {
       extensions: ['.js'],
