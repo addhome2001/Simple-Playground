@@ -5,7 +5,6 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = +process.env.PORT || 8000;
-const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = () =>
   ({
@@ -47,9 +46,9 @@ module.exports = () =>
         filename: 'index.html',
         template: path.join(__dirname, '../templates', '/index.ejs'),
       }),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-        __DEV__: true,
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: 'development',
+        DEBUG: true,
       }),
     ],
     resolve: {
