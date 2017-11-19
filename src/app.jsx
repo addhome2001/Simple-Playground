@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ErrorHandler from './ErrorHandler';
+import TextField from './TextField';
 
 export default class App extends Component {
   constructor(props) {
@@ -19,11 +21,19 @@ export default class App extends Component {
     const { name } = this.state;
     const { text } = this.props.greeting;
     return (
-      <div>
-        <h3>{ text } { name }!</h3>
-        <span>Your name: </span>
-        <input type="text" onChange={this.handleInputChange} />
-      </div>
+      <ErrorHandler>
+        <div>
+          <h3>
+            {[
+              <TextField key={text} text={text} />,
+              ', ',
+              <TextField key={name} text={name} />,
+            ]}
+          </h3>
+          <span>Your name: </span>
+          <input type="text" onChange={this.handleInputChange} />
+        </div>
+      </ErrorHandler>
     );
   }
 }

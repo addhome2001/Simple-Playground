@@ -5,10 +5,11 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './app';
 
-if (process.env.DEBUG) {
-  const Perf = require('react-addons-perf');
-  window.Perf = Perf;
-}
+// waiting for React 16
+// if (process.env.DEBUG) {
+//   const Perf = require('react-addons-perf');
+//   window.Perf = Perf;
+// }
 
 const render = (Root) => {
   ReactDOM.render(
