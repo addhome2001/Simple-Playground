@@ -10,7 +10,6 @@ module.exports = () =>
   ({
     entry: {
       bundle: [
-        'react-hot-loader/patch',
         `webpack-dev-server/client?http://${HOST}:${PORT}`,
         'webpack/hot/only-dev-server',
         path.join(__dirname, '../src'),

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { hot } from 'react-hot-loader';
 import ErrorHandler from './ErrorHandler';
 import TextField from './TextField';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,3 +42,5 @@ export default class App extends Component {
 App.propTypes = {
   greeting: PropTypes.objectOf(PropTypes.string).isRequired,
 };
+
+export default hot(module)(App);
