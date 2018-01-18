@@ -8,9 +8,15 @@
     "start": "better-npm-run start",
     "build": "better-npm-run build",
     "clear": "rimraf dist",
-    "lint": "./node_modules/.bin/eslint . --ignore-path .gitignore",
     "debug": "better-npm-run debug",
-    "prepush": "npm run lint"
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix --ignore-path .gitignore .",
+      "prettier --write",
+      "git add"
+    ]
   },
   "betterScripts": {
     "start": {
@@ -75,6 +81,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.0",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.2",
+    "lint-staged": "^6.0.0",
     "rimraf": "^2.6.1"
   }
 }
