@@ -23,9 +23,9 @@ let make = (~greeting, _children) => {
     },
   render: ({state: {name}, send}) =>
     <div>
-      <div>(str(greeting ++ ", " ++ name))</div>
+      <h3>(str(greeting ++ ", " ++ name))</h3>
+      (str("Your Name: "))
       <input
-        value=name
         _type="text"
         placeholder="Write your name."
         onChange=(e => send(ChangeName(valueFromEvent(e))))
