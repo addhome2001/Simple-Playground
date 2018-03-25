@@ -25,11 +25,11 @@ class App extends Component {
       <ErrorHandler>
         <div>
           <h3>
-            {[
-              <TextField key={text} text={text} />,
-              ', ',
-              <TextField key={name} text={name} />,
-            ]}
+            <React.Fragment>
+              <TextField key={text} text={text} />
+              ,
+              <TextField key={name} text={name} />
+            </React.Fragment>
           </h3>
           <span>Your name: </span>
           <input type="text" onChange={this.handleInputChange} />
