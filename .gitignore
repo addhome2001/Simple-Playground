@@ -1,8 +1,11 @@
-build/
-node_modules/
-.idea/
-.git/
+/build
+/node_modules
+/.idea
+/.git
+/dist
+/lib
+
 .DS_Store
 npm-debug.log
-dist/bundle.js
-/dist
+.merlin
+.bsb.lock
