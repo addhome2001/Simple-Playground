@@ -17,12 +17,6 @@ Make sure your system has the correct Node and Npm versions.
 - Node 6.2.x
 - Npm 3.9.x
 
-## React
-Another branch with the environment of react.
-```
-git checkout react
-```
-
 ## Usage
 - Changing source file in `/src` and click save.
 - open `http:localhost:8000` or `http:YOUR_IP:8000`.
