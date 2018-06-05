@@ -23,6 +23,12 @@ Another branch with the environment of react.
 git checkout react
 ```
 
+## Reason
+Another branch with the environment of reason.
+```
+git checkout reason
+```
+
 ## Usage
 - Changing source file in `/src` and click save.
 - open `http:localhost:8000` or `http:YOUR_IP:8000`.
