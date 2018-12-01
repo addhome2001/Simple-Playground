@@ -4,18 +4,18 @@
 
 ## Contains
 
-- [Webpack 2](https://webpack.github.io)
+- [Webpack 4](https://webpack.github.io)
 - [Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
-- [Babel 6](https://babeljs.io/)
+- [Babel 7](https://babeljs.io/)
 - [ESLint](http://eslint.org/)
 - [Yarn](https://yarnpkg.com/)
 - [fetch](https://github.com/matthew-andrews/isomorphic-fetch)
 
-## Requirements
-Make sure your system has the correct Node and Npm versions.
-
-- Node 6.2.x
-- Npm 3.9.x
+## React
+Another branch with the environment of react.
+```
+git checkout react
+```
 
 ## Usage
 - Changing source file in `/src` and click save.
