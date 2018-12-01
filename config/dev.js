@@ -13,6 +13,7 @@ module.exports = () => ({
       path.join(__dirname, '../lib/js/src/Main.js'),
     ],
   },
+  mode: 'development',
   devtool: 'eval',
   devServer: {
     host: HOST,

@@ -10,8 +10,8 @@ module.exports = () => ({
     path: path.join(__dirname, '../dist'),
     filename: '[chunkhash:8].bundle.js',
   },
+  mode: 'production',
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
       DEBUG: false,
@@ -24,16 +24,6 @@ module.exports = () => ({
       Promise: 'es6-promise',
       fetch: 'isomorphic-fetch',
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        unused: true,
-        dead_code: true,
-      },
-      output: {
-        comments: false,
-      },
-    }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
@@ -45,7 +35,6 @@ module.exports = () => ({
         collapseWhitespace: true,
       },
     }),
-    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   resolve: {
     extensions: ['.js'],
