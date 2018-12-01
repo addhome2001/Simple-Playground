@@ -3,11 +3,12 @@
   "env": {
     "browser": true
   },
-  # 設定與webpack相同的設定
+  "ecmaFeatures": { "jsx": true },
+  // 設定與webpack相同的設定
   "settings": {
     "import/resolver": {
       "webpack": {
-        "config": "config/dev.js",
+        "config": "config/dev.js"
       }
     }
   }
